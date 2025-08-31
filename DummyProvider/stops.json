@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "First stop",
-            "lines": [ 1, 2 ]
+            "lines": [ 1, 2, 4 ]
         },
         {
             "id": 2,

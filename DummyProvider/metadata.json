@@ -6,5 +6,9 @@
     "capabilities": [
     ],
     "lastUpdated": 1756290241,
-    "timeSource": "http://192.168.0.14:3000/$stop"
+
+    "timeSource": "http://192.168.0.14:3000/@stop",
+    "timeFormat": {
+        "type": "IntArray"
+    }
 }
