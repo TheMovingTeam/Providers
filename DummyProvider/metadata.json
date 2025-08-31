@@ -1,0 +1,10 @@
+{
+    "name": "DummyProvider",
+    "id": 1,
+    "versionMajor": 0,
+    "versionMinor": 0,
+    "capabilities": [
+    ],
+    "lastUpdated": 1756290241,
+    "timeSource": "http://192.168.0.14:3000/$stop"
+}

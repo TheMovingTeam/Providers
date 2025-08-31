@@ -1,0 +1,29 @@
+{
+    "stops":[
+        {
+            "id": 1,
+            "name": "First stop",
+            "lines": [ 1, 2 ]
+        },
+        {
+            "id": 2,
+            "name": "Second stop",
+            "lines": [ 1, 3 ]
+        },
+        {
+            "id": 3,
+            "name": "Third stop",
+            "lines": [ 4 ]
+        },
+        {
+            "id": 4,
+            "name": "Fourth stop",
+            "lines": [ 1, 5 ]
+        },
+        {
+            "id": 5,
+            "name": "Fifth stop",
+            "lines": [ 2, 3, 5, 6 ]
+        }
+    ]
+}

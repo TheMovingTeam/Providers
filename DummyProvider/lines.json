@@ -1,0 +1,40 @@
+{
+    "lines": [
+        {
+            "id": 1,
+            "name": "Line 1",
+            "emblem": "L1",
+            "stops": [1,2,3]
+        },
+        {
+            "id": 2,
+            "name": "Line 2",
+            "emblem": "L2",
+            "stops": [2,3,4]
+        },
+        {
+            "id": 3,
+            "name": "Line 3",
+            "emblem": "L3",
+            "stops": [1,2,4,5]
+        },
+        {
+            "id": 4,
+            "name": "Line 4",
+            "emblem": "L4",
+            "stops": [2,4,5]
+        },
+        {
+            "id": 5,
+            "name": "Line 5",
+            "emblem": "L5",
+            "stops": [1,2,3,4,5]
+        },
+        {
+            "id": 6,
+            "name": "Line 6",
+            "emblem": "L6",
+            "stops": [1,2,3]
+        }
+    ]
+}
