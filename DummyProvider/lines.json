@@ -4,36 +4,42 @@
             "id": 1,
             "name": "Line 1",
             "emblem": "L1",
+            "color": "#a62828",
             "stops": [1,2,3]
         },
         {
             "id": 2,
             "name": "Line 2",
             "emblem": "L2",
+            "color": "#1ca51a",
             "stops": [2,3,4]
         },
         {
             "id": 3,
             "name": "Line 3",
             "emblem": "L3",
+            "color": "#c8a3ca",
             "stops": [1,2,4,5]
         },
         {
             "id": 4,
             "name": "Line 4",
             "emblem": "L4",
+            "color": "#faec27",
             "stops": [2,4,5]
         },
         {
             "id": 5,
             "name": "Line 5",
             "emblem": "L5",
+            "color": "#222110",
             "stops": [1,2,3,4,5]
         },
         {
             "id": 6,
             "name": "Line 6",
             "emblem": "L6",
+            "color": "#101422",
             "stops": [1,2,3]
         }
     ]
