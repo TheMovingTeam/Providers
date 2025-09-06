@@ -4,12 +4,14 @@
     "versionMajor": 0,
     "versionMinor": 0,
     "capabilities": [
-        "Time"
+        "Time",
+        "QrScan"
     ],
-    "lastUpdated": 1756290241,
+    "lastUpdated": 1757184329,
 
     "timeSource": "http://192.168.0.17:3000/@stop",
     "timeFormat": {
         "type": "IntArray"
-    }
+    },
+    "qrFormat": "http://192.168.0.17:3000/@stop"
 }
