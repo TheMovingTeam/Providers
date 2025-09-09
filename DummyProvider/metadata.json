@@ -6,7 +6,8 @@
     "versionMinor": 0,
     "capabilities": [
         "Time",
-        "QrScan"
+        "QrScan",
+        "Notifications"
     ],
     "lastUpdated": 1757184329,
 
