@@ -1,5 +1,6 @@
 {
     "name": "DummyProvider",
+    "description": "This is a placeholder provider, if you see this it's probably in a preview",
     "id": 1,
     "versionMajor": 0,
     "versionMinor": 0,
