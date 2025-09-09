@@ -4,27 +4,33 @@
             "id": 1,
             "name": "First stop",
             "lines": [ 1, 2, 4 ],
-            "notifications": "Warning: There's a placeholder stop here."
+            "notifications": [
+                "Warning: There's a placeholder stop here."
+            ] 
         },
         {
             "id": 2,
             "name": "Second stop",
-            "lines": [ 1, 3 ]
+            "lines": [ 1, 3 ],
+            "notifications": []
         },
         {
             "id": 3,
             "name": "Third stop",
-            "lines": [ 4 ]
+            "lines": [ 4 ],
+            "notifications": []
         },
         {
             "id": 4,
             "name": "Fourth stop",
-            "lines": [ 1, 5 ]
+            "lines": [ 1, 5 ],
+            "notifications": []
         },
         {
             "id": 5,
             "name": "Fifth stop",
-            "lines": [ 2, 3, 5, 6 ]
+            "lines": [ 2, 3, 5, 6 ],
+            "notifications": []
         }
     ]
 }
