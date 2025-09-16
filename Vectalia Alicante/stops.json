@@ -1,0 +1,10 @@
+{
+    "stops":[
+        {
+            "id": 1539,
+            "comId": 3551,
+            "name": "C.A. MONTEMAR",
+            "lines": [ 229, 230 ]
+        }
+    ]
+}

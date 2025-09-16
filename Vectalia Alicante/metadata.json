@@ -1,0 +1,16 @@
+{
+    "name": "Vectalia Alicante",
+    "description": "The operator for the bus service in Alicante",
+    "id": 2,
+    "versionMajor": 1,
+    "versionMinor": 1,
+    "capabilities": [
+        "DoubleTime",
+        "QrScan",
+        "ComId",
+        "Notifications"
+    ],
+    "lastUpdated": 1757184379,
+    "timeSource": "https://appalicante-api-rvpro.vectalia.es/es/api/public/transportnet/15/linestop/@stop/estimation",
+    "qrFormat": "http://www.subus.es/QR/Alicante/consulta.aspx?p=@stop"
+}

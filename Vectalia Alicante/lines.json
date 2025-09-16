@@ -1,0 +1,18 @@
+{
+    "lines":[
+        {
+            "id": 229,
+            "name": "AV.ÓSCAR ESPLÁ",
+            "emblem": "09",
+            "color": "#F47C00",
+            "stops": [1539]
+        },
+        {
+            "id": 230,
+            "name": "RAMBLA",
+            "emblem": "10",
+            "color": "#660E60",
+            "stops": [1539]
+        }
+    ]
+}
