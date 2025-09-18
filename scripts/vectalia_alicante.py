@@ -9,7 +9,7 @@ stopIds = []
 
 def fetchLines():
     lines = []
-    for i in range(166, 1001):  # I hate this but I can't find a clear list
+    for i in range(0, 1001):  # I hate this but I can't find a clear list
         print("Testing " + str(i))
         r = requests.get(API_URL + "itinerary/" + str(i))
         response = r.json()
@@ -84,5 +84,6 @@ if __name__ == "__main__":
         fetchedStops = fetchStops(stopIds)
         c.exportLines(PROVIDER, fetchedLines)
         c.exportStops(PROVIDER, fetchedStops)
+        c.updateProvider(PROVIDER)
     except KeyboardInterrupt:
         print("Interrupted!")

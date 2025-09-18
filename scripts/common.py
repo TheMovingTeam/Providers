@@ -1,4 +1,6 @@
 import json
+import time
+import os
 
 
 class LineObject:
@@ -59,3 +61,13 @@ def exportStops(provider, stops):
     stopsJson = json.dumps(stopsDict)
     with open('../' + provider + '/stops.json', 'w') as outfile:
         outfile.write(stopsJson)
+
+
+def updateProvider(provider):
+    filename = '../' + provider + '/metadata.json'
+    with open(filename, 'r') as file:
+        metadata = json.loads(file)
+        metadata['lastUpdated'] = int(time.time())
+    os.remove(filename)
+    with open(filename, 'w') as file:
+        json.dump(metadata, file, indent=4)
