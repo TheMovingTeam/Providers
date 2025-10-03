@@ -66,7 +66,7 @@ def exportStops(provider, stops):
 def updateProvider(provider):
     filename = '../' + provider + '/metadata.json'
     with open(filename, 'r') as file:
-        metadata = json.loads(file)
+        metadata = json.load(file)
         metadata['lastUpdated'] = int(time.time())
     os.remove(filename)
     with open(filename, 'w') as file:
