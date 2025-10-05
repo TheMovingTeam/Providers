@@ -13,7 +13,7 @@ def fetchLines():
         try:
             fetchedLine = c.LineObject(
                     line['linea_id_FGV'],
-                    line['nombre_largo'],
+                    "Línea " + line['nombre_largo'].replace('L', ''),
                     line['nombre_corto'],
                     line['color'],
                     line['stops'].split(',')
@@ -47,6 +47,13 @@ def fetchStops():
             pass
         pass
     return stops
+
+
+def stopLines(lines, stops):
+    for stop in stops:
+        presentLines = filter(lambda line: stop.id in line.stops, lines)
+        lineIds = map(lambda line: line.id, presentLines)
+        stop.lines = lineIds
 
 
 if __name__ == "__main__":
