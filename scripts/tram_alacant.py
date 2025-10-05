@@ -37,7 +37,7 @@ def fetchStops():
                     "null",
                     stop['nombre'],
                     None,
-                    "",
+                    [],
                     stop['latitud'],
                     stop['longitud'],
             )
