@@ -16,7 +16,7 @@ def fetchLines():
                     line['nombre_largo'],
                     line['nombre_corto'],
                     line['color'],
-                    line['stops']
+                    line['stops'].split(',')
             )
             lines.append(fetchedLine)
         except KeyError:
@@ -36,7 +36,7 @@ def fetchStops():
                     stop['estacion_id_FGV'],
                     None,
                     stop['nombre'],
-                    None,
+                    [],
                     [],
                     stop['latitud'],
                     stop['longitud'],
