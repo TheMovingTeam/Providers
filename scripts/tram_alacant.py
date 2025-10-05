@@ -51,14 +51,14 @@ def fetchStops():
 
 def stopLines(lines, stops):
     for stop in stops:
-        presentLines = filter(lambda line: stop.id in line.stops, lines)
-        lineIds = map(lambda line: line.id, presentLines)
-        stop.lines = lineIds
+        lineIds = [line.id for line in lines if str(stop.id) in line.stops]
+        stop.lines = list(lineIds)
 
 
 if __name__ == "__main__":
     fetchedLines = fetchLines()
     fetchedStops = fetchStops()
+    stopLines(fetchedLines, fetchedStops)
     c.exportLines(PROVIDER, fetchedLines)
     c.exportStops(PROVIDER, fetchedStops)
     c.updateProvider(PROVIDER)
