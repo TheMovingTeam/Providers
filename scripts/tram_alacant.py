@@ -34,7 +34,7 @@ def fetchStops():
         try:
             fetchedStop = c.StopObject(
                     stop['estacion_id_FGV'],
-                    "null",
+                    None,
                     stop['nombre'],
                     None,
                     [],
