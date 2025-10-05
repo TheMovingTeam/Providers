@@ -33,7 +33,7 @@ def fetchStops():
     for stop in response:
         try:
             fetchedStop = c.StopObject(
-                    stop['id'],
+                    stop['estacion_id_FGV'],
                     "null",
                     stop['nombre'],
                     None,
