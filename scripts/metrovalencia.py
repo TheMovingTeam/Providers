@@ -1,8 +1,8 @@
 import requests
 import common as c
 
-PROVIDER = "Tram Alacant"
-API_URL = "https://www.fgv.es/ap18/api/public/es/api/v1/A"
+PROVIDER = "Metrovalencia"
+API_URL = "https://www.fgv.es/ap18/api/public/es/api/v1/V"
 
 
 def fetchLines():
