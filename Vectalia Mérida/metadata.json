@@ -1,6 +1,6 @@
 {
-    "name": "Vectalia Mérida",
-    "description": "Implementaci\u00f3n no oficial de el servicio de autobuses de Mérida.",
+    "name": "Vectalia M\u00e9rida",
+    "description": "Implementaci\u00f3n no oficial de el servicio de autobuses de M\u00e9rida.",
     "id": 8,
     "versionMajor": 1,
     "versionMinor": 1,
@@ -11,7 +11,7 @@
         "Geo",
         "Notifications"
     ],
-    "lastUpdated": 1760041209,
+    "lastUpdated": 1760041394,
     "timeSource": "http://atumerida.cuatroochenta.com/webservice.php/stop-time-table-isae?stopId=@stop",
     "qrFormat": "http://www.subus.es/QR/Merida/consulta.aspx?p=@stop"
 }
