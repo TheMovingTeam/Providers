@@ -22,7 +22,10 @@ def fetchLines(city):
             i['id'],
             i['name'],
             i['alias'],
-            "#" + i['color'].replace("H", "F"),
+            "#" + i['color']
+            .replace("H", "D")
+            .replace("J", "E")
+            .replace("K", "F"),
             []
         )
         lines.append(line)
