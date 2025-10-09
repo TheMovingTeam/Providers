@@ -43,8 +43,8 @@ def fetchStops(city):
     line_stops = [match.value for match in query.find(xmltodict.parse(r.text))]
     for i in line_stops:
         stop = c.StopObject(
-            i['importation_id'],
             i['id'],
+            i['importation_id'],
             i['name'],
             [],  # Lines
             [],  # Incidences
@@ -69,7 +69,7 @@ def fetchAssociations(lines, stops, city):
             line_id = association['line_id']
             line_stop_id = association['line_stop_id']
             for stop in stops:
-                if stop.comId == line_stop_id:
+                if stop.id == line_stop_id:
                     stop.lines.append(line_id)
                     pass
                 pass

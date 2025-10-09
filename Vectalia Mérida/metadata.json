@@ -12,6 +12,6 @@
         "Notifications"
     ],
     "lastUpdated": 1760042575,
-    "timeSource": "http://atumerida.cuatroochenta.com/webservice.php/stop-time-table-isae?stopId=@stop",
+    "timeSource": "http://atumerida.cuatroochenta.com/webservice.php/stop-time-table-isae?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Merida/consulta.aspx?p=@stop"
 }

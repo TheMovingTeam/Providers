@@ -12,6 +12,6 @@
         "Notifications"
     ],
     "lastUpdated": 1760042574,
-    "timeSource": "http://atucaceres.cuatroochenta.com/webservice.php/stop-time-table-isae?stopId=@stop",
+    "timeSource": "http://atucaceres.cuatroochenta.com/webservice.php/stop-time-table-isae?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Caceres/consulta.aspx?p=@stop"
 }
