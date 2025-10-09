@@ -1,6 +1,6 @@
 import requests
 import time
-from jsonpath_ng import parse, jsonpath
+from jsonpath_ng import parse
 import common as c
 
 PROVIDER = "Vectalia Alicante"
