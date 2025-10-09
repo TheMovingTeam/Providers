@@ -11,7 +11,7 @@
         "Geo",
         "Notifications"
     ],
-    "lastUpdated": 1760042575,
+    "lastUpdated": 1760043010,
     "timeSource": "http://atumerida.cuatroochenta.com/webservice.php/stop-time-table-isae?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Merida/consulta.aspx?p=@stop"
 }

@@ -26,7 +26,7 @@ def fetchLines(city):
             .replace("H", "D")
             .replace("J", "E")
             .replace("K", "F"),
-            []
+            []  # Stops
         )
         lines.append(line)
         pass
