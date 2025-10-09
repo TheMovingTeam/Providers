@@ -11,7 +11,7 @@
         "Geo",
         "Notifications"
     ],
-    "lastUpdated": 1760041859,
-    "timeSource": "http://atualcoi.cuatroochenta.com/webservice.php/stop-time-table-isae?stopId=@stop",
+    "lastUpdated": 1760042572,
+    "timeSource": "http://atualcoy.cuatroochenta.com/webservice.php/stop-time-table-isae?stopId=@stop",
     "qrFormat": "http://www.subus.es/QR/Alcoi/consulta.aspx?p=@stop"
 }
