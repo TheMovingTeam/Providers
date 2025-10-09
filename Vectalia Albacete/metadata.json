@@ -11,7 +11,7 @@
         "Geo",
         "Notifications"
     ],
-    "lastUpdated": 1760043006,
-    "timeSource": "http://atualbacete.cuatroochenta.com/webservice.php/stop-time-table-isae?stopId=@comId",
+    "lastUpdated": 1760043350,
+    "timeSource": "http://atualbacete.cuatroochenta.com/webservice.php/stop-timetable-isae?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Albacete/consulta.aspx?p=@stop"
 }
