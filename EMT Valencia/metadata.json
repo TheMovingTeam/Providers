@@ -1,0 +1,14 @@
+{
+    "name": "EMT Valencia",
+    "description": "Implementaci\u00f3n no oficial de el servicio de autobuses de Valencia.",
+    "id": 9,
+    "versionMajor": 1,
+    "versionMinor": 1,
+    "capabilities": [
+        "DoubleTime",
+        "QrScan"
+    ],
+    "lastUpdated": 1760122480,
+    "timeSource": "https://servicios.emtvalencia.es/estimaciones/estimacion.php?idioma=es&parada=@stop&adaptados=false",
+    "qrFormat": "http://www.emtvalencia.es/QR.php?sec=est&p=@stop"
+}
