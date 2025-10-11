@@ -108,17 +108,9 @@ def fetchStops(lines):
     return list(set(fetchedStops))
 
 
-def stopLines(lines, stops):
-    lines = [line for line in lines if line.stops != []]
-    stops = [stop for stop in stops if stop.lines != []]
-    return lines, stops
-    pass
-
-
 def main():
     lines = fetchLines()
     stops = fetchStops(lines)
-    # lines, stops = stopLines(lines, stops)
     c.exportLines(PROVIDER, lines)
     c.exportStops(PROVIDER, stops)
     c.updateProvider(PROVIDER)
