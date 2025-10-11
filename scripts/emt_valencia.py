@@ -13,7 +13,7 @@ API_URL = "https://www.emtvalencia.es/ciudadano/servicios/"
 def fetchLines():
     fetchedLines = []
     r = requests.get(API_URL + "info_lineas_v2.xml")
-    data = xmltodict.parse(r.text)
+    data = xmltodict.parse(r.content.decode('utf-8'))
     query = jsonpath_ng.parse("$.lineas.linea[*]")
     lines = [match.value for match in query.find(data)]
     for line in lines:
@@ -56,11 +56,11 @@ def fetchStops(lines):
             "&lang=es"
         r = requests.get(routesURL)
         try:
-            data = xmltodict.parse(r.text)
+            data = xmltodict.parse(r.content.decode('utf-8'))
         except e.ExpatError:
             logging.warning("Error found fetching routes for line: " + line.id)
             print("Input:")
-            print(r.text)
+            print(r.content.decode('utf-8'))
             print("URL: " + routesURL)
             continue
         query = jsonpath_ng.parse("$.linea.sentidos_ruta.sentido_ruta[*]")
@@ -73,12 +73,12 @@ def fetchStops(lines):
                              "&sentido=" + route['sentido']
                              )
             try:
-                data = xmltodict.parse(r.text)
+                data = xmltodict.parse(r.content.decode('utf-8'))
             except e.ExpatError:
                 logging.warning(
                     "Error found fetching stops on line: " + line.id)
                 print("Input:")
-                print(r.text)
+                print(r.content.decode('utf-8'))
                 continue
             query = jsonpath_ng.parse("$.linea.paradas.parada[*]")
             stops = [match.value for match in query.find(data)]
@@ -104,6 +104,7 @@ def fetchStops(lines):
                 )
                 fetchedStops.append(fetchedStop)
                 time.sleep(.5)
+                pass
     return list(set(fetchedStops))
 
 
@@ -125,4 +126,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+        pass
+    except KeyError:
+        pass
+    pass
