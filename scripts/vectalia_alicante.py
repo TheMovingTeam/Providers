@@ -1,15 +1,23 @@
 import requests
 import time
+from jsonpath_ng import parse
 import common as c
 
 PROVIDER = "Vectalia Alicante"
 API_URL = "https://appalicante-api-rvpro.vectalia.es/es/api/public/"
+
+ITINERARY_QUERY = '$.data.transport_nets[*].lines[*].itineraries[*].id'
 stopIds = []
 
 
 def fetchLines():
     lines = []
-    for i in range(0, 1001):  # I hate this but I can't find a clear list
+    # Get itinerary list
+    rq = requests.get(API_URL + "city/4")
+    query = parse(ITINERARY_QUERY)
+    itineraries = [match.value for match in query.find(rq.json())]
+    # Download itineraries
+    for i in itineraries:
         print("Testing " + str(i))
         r = requests.get(API_URL + "itinerary/" + str(i))
         response = r.json()

@@ -2,7 +2,12 @@
     "providers": [
         "DummyProvider",
         "Vectalia Alicante",
+        "Vectalia Albacete",
+        "Vectalia Alcoi",
+        "Vectalia Cáceres",
+        "Vectalia Mérida",
         "Tram Alacant",
-        "Metrovalencia"
+        "Metrovalencia",
+        "EMT Valencia"
     ]
 }
