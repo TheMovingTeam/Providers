@@ -97,12 +97,17 @@ def fetchStops(ids):
     return stops
 
 
+def run():
+    fetchedLines = fetchLines()
+    fetchedStops = fetchStops(stopIds)
+    c.exportLines(PROVIDER, fetchedLines)
+    c.exportStops(PROVIDER, fetchedStops)
+    c.updateProvider(PROVIDER)
+    pass
+
+
 if __name__ == "__main__":
     try:
-        fetchedLines = fetchLines()
-        fetchedStops = fetchStops(stopIds)
-        c.exportLines(PROVIDER, fetchedLines)
-        c.exportStops(PROVIDER, fetchedStops)
-        c.updateProvider(PROVIDER)
+        run()
     except KeyboardInterrupt:
         print("Interrupted!")
