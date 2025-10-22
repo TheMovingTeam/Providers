@@ -66,7 +66,7 @@ def fetchStops(ids):
                     continue  # Skip stop if it has no lines
                 for itinerary in itinerariesResponse:
                     linesInStop.append(itinerary['lineItineraryId'])
-                incidence_msgs = ""
+                incidence_msgs = []
                 try:
                     incidences = data['incidences']
                     if incidences != []:
@@ -76,7 +76,7 @@ def fetchStops(ids):
                                 )
                 except KeyError:
                     print("Incidences empty")
-                    incidence_msgs = ""
+                    incidence_msgs = []
                 stop = c.StopObject(
                     data['id'],
                     int(data['nameCommercial']),
