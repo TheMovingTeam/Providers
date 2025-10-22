@@ -1,7 +1,6 @@
 import requests
 import jsonpath_ng
 import common as c
-import time
 
 
 PROVIDER = "EMT Madrid"
