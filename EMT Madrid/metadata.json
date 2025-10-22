@@ -7,6 +7,6 @@
     "capabilities": [
         "DoubleTime"
     ],
-    "lastUpdated": 1761168636,
+    "lastUpdated": 1761169846,
     "timeSource": "https://openapi.emtmadrid.es/v1/transport/busemtmad/stops/@stop/arrives/all/"
 }

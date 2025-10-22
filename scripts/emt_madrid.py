@@ -45,15 +45,16 @@ def fetchLines(token):
         # Fetch stops both ways
         r1 = requests.get(
             API_URL + "/v1/transport/busemtmad/lines/" +
-            str(line['line']) + "/stops/1/"
+            str(line['line']) + "/stops/1/",
+            headers={"accessToken": token}
         ).json()
         r2 = requests.get(
             API_URL + "/v1/transport/busemtmad/lines/" +
-            str(line['line']) + "/stops/2/"
+            str(line['line']) + "/stops/2/",
+            headers={"accessToken": token}
         ).json()
-        query = jsonpath_ng.parse("$.data[*].stops[*].pmv")
-        lineStops1 = [int(match.value) for match in query.find(r1)]
-        lineStops2 = [int(match.value) for match in query.find(r2)]
+        lineStops1 = [int(stop['stop']) for stop in r1['data'][0]['stops']]
+        lineStops2 = [int(stop['stop']) for stop in r2['data'][0]['stops']]
         # Create line object
         fetchedLine = c.LineObject(
             int(line['line']),
@@ -80,10 +81,10 @@ def fetchStops(token):
             stop['node'],
             None,  # ComId
             stop['name'],
+            [line.split('/')[0] for line in stop['lines']],  # Lines
+            [],  # Notifications
             stop['geometry']['coordinates'][0],
             stop['geometry']['coordinates'][1],
-            [],
-            [line.split('/')[0] for line in stop['lines']]
         )
         fetchedStops.append(fetchedStop)
     return fetchedStops
