@@ -55,14 +55,14 @@ def fetchLines(token):
         lineStops1 = [int(stop['stop']) for stop in r1['data'][0]['stops']]
         lineStops2 = [int(stop['stop']) for stop in r2['data'][0]['stops']]
         if line['nameA'] == line['nameB']:
-            lineName = line['nameA']
+            lineName = [line['nameA']]
         else:
-            lineName = str(line['nameA'] + " - " + line['nameB']),
-
+            lineName = line['nameA'] + " - " + line['nameB'],
+        print(lineName[0])
         # Create line object
         fetchedLine = c.LineObject(
             int(line['line']),
-            lineName,
+            lineName[0],
             line['label'],
             "#" + line['color'],
             list(set(lineStops1 + lineStops2))  # Stops
