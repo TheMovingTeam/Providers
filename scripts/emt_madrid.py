@@ -54,10 +54,15 @@ def fetchLines(token):
         ).json()
         lineStops1 = [int(stop['stop']) for stop in r1['data'][0]['stops']]
         lineStops2 = [int(stop['stop']) for stop in r2['data'][0]['stops']]
+        if line['nameA'] == line['nameB']:
+            lineName = line['nameA']
+        else:
+            lineName = str(line['nameA'] + " - " + line['nameB']),
+
         # Create line object
         fetchedLine = c.LineObject(
             int(line['line']),
-            line['nameA'] + " - " + line['nameB'],
+            lineName,
             line['label'],
             "#" + line['color'],
             list(set(lineStops1 + lineStops2))  # Stops
@@ -92,9 +97,7 @@ def fetchStops(token):
 def run():
     token = fetchToken()
     lines = fetchLines(token)
-    print([line.to_dict() for line in lines])
     stops = fetchStops(token)
-    print([stop.to_dict() for stop in stops])
     c.exportLines(PROVIDER, lines)
     c.exportStops(PROVIDER, stops)
     c.updateProvider(PROVIDER)
