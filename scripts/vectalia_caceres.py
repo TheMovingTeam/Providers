@@ -5,7 +5,7 @@ PROVIDER = "Vectalia Cáceres"
 CITY = "caceres"
 
 
-def main():
+def run():
     lines = vc.fetchLines(CITY)
     stops = vc.fetchStops(CITY)
     vc.fetchAssociations(lines, stops, CITY)
@@ -16,4 +16,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        run()
+    except KeyboardInterrupt:
+        print("Interrupted!")

@@ -55,10 +55,17 @@ def stopLines(lines, stops):
         stop.lines = list(lineIds)
 
 
-if __name__ == "__main__":
+def run():
     fetchedLines = fetchLines()
     fetchedStops = fetchStops()
     stopLines(fetchedLines, fetchedStops)
     c.exportLines(PROVIDER, fetchedLines)
     c.exportStops(PROVIDER, fetchedStops)
     c.updateProvider(PROVIDER)
+    pass
+
+if __name__ == "__main__":
+    try:
+        run()
+    except KeyboardInterrupt:
+        print("Interrupted!")

@@ -108,7 +108,7 @@ def fetchStops(lines):
     return list(set(fetchedStops))
 
 
-def main():
+def run():
     lines = fetchLines()
     stops = fetchStops(lines)
     c.exportLines(PROVIDER, lines)
@@ -119,8 +119,6 @@ def main():
 
 if __name__ == "__main__":
     try:
-        main()
-        pass
-    except KeyError:
-        pass
-    pass
+        run()
+    except KeyboardInterrupt:
+        print("Interrupted!")

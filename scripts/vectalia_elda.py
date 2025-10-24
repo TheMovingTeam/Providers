@@ -5,7 +5,7 @@ PROVIDER = "Vectalia Elda"
 CITY = "elda"
 
 
-def fetch():
+def run():
     lines = vc.fetchLines(CITY)
     stops = vc.fetchStops(CITY)
     vc.fetchAssociations(lines, stops, CITY)
@@ -16,4 +16,7 @@ def fetch():
 
 
 if __name__ == "__main__":
-    fetch()
+    try:
+        run()
+    except KeyboardInterrupt:
+        print("Interrupted!")

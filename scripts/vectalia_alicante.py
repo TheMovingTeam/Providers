@@ -66,7 +66,7 @@ def fetchStops(ids):
                     continue  # Skip stop if it has no lines
                 for itinerary in itinerariesResponse:
                     linesInStop.append(itinerary['lineItineraryId'])
-                incidence_msgs = ""
+                incidence_msgs = []
                 try:
                     incidences = data['incidences']
                     if incidences != []:
@@ -76,7 +76,7 @@ def fetchStops(ids):
                                 )
                 except KeyError:
                     print("Incidences empty")
-                    incidence_msgs = ""
+                    incidence_msgs = []
                 stop = c.StopObject(
                     data['id'],
                     int(data['nameCommercial']),
@@ -97,12 +97,17 @@ def fetchStops(ids):
     return stops
 
 
+def run():
+    fetchedLines = fetchLines()
+    fetchedStops = fetchStops(stopIds)
+    c.exportLines(PROVIDER, fetchedLines)
+    c.exportStops(PROVIDER, fetchedStops)
+    c.updateProvider(PROVIDER)
+    pass
+
+
 if __name__ == "__main__":
     try:
-        fetchedLines = fetchLines()
-        fetchedStops = fetchStops(stopIds)
-        c.exportLines(PROVIDER, fetchedLines)
-        c.exportStops(PROVIDER, fetchedStops)
-        c.updateProvider(PROVIDER)
+        run()
     except KeyboardInterrupt:
         print("Interrupted!")
