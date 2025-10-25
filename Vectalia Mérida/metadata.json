@@ -1,6 +1,6 @@
 {
     "name": "Vectalia M\u00e9rida",
-    "description": "Implementaci\u00f3n no oficial de el servicio de autobuses de M\u00e9rida.",
+    "description": "Implementaci\u00f3n no oficial del servicio de autobuses de M\u00e9rida.",
     "id": 8,
     "versionMajor": 1,
     "versionMinor": 1,
@@ -8,8 +8,7 @@
         "DoubleTime",
         "QrScan",
         "ComId",
-        "Geo",
-        "Notifications"
+        "Geo"
     ],
     "lastUpdated": 1760043354,
     "timeSource": "http://atumerida.cuatroochenta.com/webservice.php/stop-timetable-siri?stopId=@comId",

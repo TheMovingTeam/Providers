@@ -1,12 +1,11 @@
 {
     "name": "Tram Alacant",
-    "description": "Implementaci\u00f3n no oficial de el servicio de Tram de Alicante.",
+    "description": "Implementaci\u00f3n no oficial del servicio de Tram de Alicante.",
     "id": 3,
     "versionMajor": 1,
     "versionMinor": 1,
     "capabilities": [
-        "DoubleTime",
-        "Notifications"
+        "DoubleTime"
     ],
     "lastUpdated": 1759630113,
     "timeSource": "https://www.fgv.es/ap18/api/public/es/api/v1/A/horarios-prevision-3/@stop"

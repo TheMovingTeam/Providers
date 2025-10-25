@@ -1,6 +1,6 @@
 {
     "name": "Vectalia Alcoi",
-    "description": "Implementaci\u00f3n no oficial de el servicio de autobuses de Alcoi.",
+    "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Alcoi.",
     "id": 6,
     "versionMajor": 1,
     "versionMinor": 1,
@@ -8,8 +8,7 @@
         "DoubleTime",
         "QrScan",
         "ComId",
-        "Geo",
-        "Notifications"
+        "Geo"
     ],
     "lastUpdated": 1760043351,
     "timeSource": "http://atualcoy.cuatroochenta.com/webservice.php/stop-timetable-isae?stopId=@comId",

@@ -1,6 +1,6 @@
 {
     "name": "Vectalia Alicante",
-    "description": "Implementaci\u00f3n no oficial de el servicio de autobuses de Alicante.",
+    "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Alicante.",
     "id": 2,
     "versionMajor": 1,
     "versionMinor": 1,
@@ -8,8 +8,7 @@
         "DoubleTime",
         "QrScan",
         "ComId",
-        "Geo",
-        "Notifications"
+        "Geo"
     ],
     "lastUpdated": 1761046895,
     "timeSource": "https://appalicante-api-rvpro.vectalia.es/es/api/public/transportnet/15/linestop/@stop/estimation",
