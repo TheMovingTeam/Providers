@@ -8,6 +8,6 @@
         "DoubleTime",
         "Geo"
     ],
-    "lastUpdated": 1761433705,
+    "lastUpdated": 1761434180,
     "timeSource": "https://tranviademurcia.es/api-horarios/get_detalle_parada_sae?stop_id=@stop"
 }

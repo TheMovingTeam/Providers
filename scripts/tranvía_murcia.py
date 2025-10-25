@@ -21,7 +21,7 @@ def fetchStops(line):
             None,  # ComId
             stop['nombre'],
             [1],  # Line is constant
-            None,  # Notifications
+            [],  # Notifications
             stop['lat'],
             stop['lng']
         ))
