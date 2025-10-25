@@ -1,6 +1,6 @@
 {
     "name": "Vectalia C\u00e1ceres",
-    "description": "Implementaci\u00f3n no oficial de el servicio de autobuses de C\u00e1ceres.",
+    "description": "Implementaci\u00f3n no oficial del servicio de autobuses de C\u00e1ceres.",
     "id": 7,
     "versionMajor": 1,
     "versionMinor": 1,
@@ -8,8 +8,7 @@
         "DoubleTime",
         "QrScan",
         "ComId",
-        "Geo",
-        "Notifications"
+        "Geo"
     ],
     "lastUpdated": 1760043353,
     "timeSource": "http://atucaceres.cuatroochenta.com/webservice.php/stop-timetable-siri?stopId=@comId",
