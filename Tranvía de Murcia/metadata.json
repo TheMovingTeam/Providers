@@ -1,0 +1,13 @@
+{
+    "name": "Tranv\u00eda de Murcia",
+    "description": "Implementaci\u00f3n no oficial del servicio de tranv\u00eda de Murcia.",
+    "id": 11,
+    "versionMajor": 1,
+    "versionMinor": 1,
+    "capabilities": [
+        "DoubleTime",
+        "Geo"
+    ],
+    "lastUpdated": 1761433705,
+    "timeSource": "https://tranviademurcia.es/api-horarios/get_detalle_parada_sae?stop_id=@stop"
+}
