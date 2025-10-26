@@ -29,10 +29,10 @@ class StopObject:
         self.id = id
         self.comId = comId
         self.name = name
+        self.lines = lines
+        self.notifications = notifications
         self.geoX = geoX
         self.geoY = geoY
-        self.notifications = notifications
-        self.lines = lines
         pass
 
     def to_dict(self):
