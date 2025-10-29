@@ -2,7 +2,7 @@ import requests
 import json
 import modules.common as c
 
-PROVIDER = "Bus de Murcia"
+PROVIDER = "TMP Murcia"
 API_URL = "https://api.latbus.com/"
 
 
@@ -79,7 +79,7 @@ def run():
 
 if __name__ == "__main__":
     try:
-        print("-- Starting: Bus de Murcia")
+        print("-- Starting: " + PROVIDER)
         run()
     except KeyboardInterrupt:
         print("Interrupted!")
