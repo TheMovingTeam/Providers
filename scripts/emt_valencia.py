@@ -4,7 +4,7 @@ import jsonpath_ng
 import xml.parsers.expat as e
 import logging
 import time
-import common as c
+import modules.common as c
 
 PROVIDER = "EMT Valencia"
 API_URL = "https://www.emtvalencia.es/ciudadano/servicios/"
@@ -119,6 +119,7 @@ def run():
 
 if __name__ == "__main__":
     try:
+        print("-- Starting: EMT Valencia")
         run()
     except KeyboardInterrupt:
         print("Interrupted!")

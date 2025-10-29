@@ -1,6 +1,6 @@
 import requests
 import jsonpath_ng
-import common as c
+import modules.common as c
 
 
 PROVIDER = "EMT Madrid"
@@ -105,6 +105,7 @@ def run():
 
 if __name__ == "__main__":
     try:
+        print("-- Starting: EMT Madrid")
         run()
     except KeyboardInterrupt:
         print("Interrupted!")

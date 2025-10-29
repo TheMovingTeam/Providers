@@ -1,7 +1,7 @@
 import requests
 import xmltodict
 import jsonpath_ng
-import common as c
+import modules.common as c
 
 API_BASE_URL = "http://atu@city.cuatroochenta.com/webservice.php/sync.php?compression=false"
 POST_STRING = "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><data appVersion=\"1.15.1\" deviceId=\"9999\" culture=\"es\" platform=\"android\" />"

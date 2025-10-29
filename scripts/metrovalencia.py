@@ -1,5 +1,5 @@
 import requests
-import common as c
+import modules.common as c
 
 PROVIDER = "Metrovalencia"
 API_URL = "https://www.fgv.es/ap18/api/public/es/api/v1/V"
@@ -66,6 +66,7 @@ def run():
 
 if __name__ == "__main__":
     try:
+        print("-- Starting: Metrovalencia")
         run()
     except KeyboardInterrupt:
         print("Interrupted!")
