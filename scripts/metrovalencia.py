@@ -5,18 +5,18 @@ PROVIDER = "Metrovalencia"
 API_URL = "https://www.fgv.es/ap18/api/public/es/api/v1/V"
 
 
-def fetchLines():
-    lines = []
+def fetchLines() -> list[c.LineObject]:
+    lines: list[c.LineObject] = []
     r = requests.get(API_URL + "/lineas")
     response = r.json()
     for line in response:
         try:
             fetchedLine = c.LineObject(
-                    line['linea_id_FGV'],
-                    "Línea " + line['nombre_largo'].replace('L', ''),
-                    line['nombre_corto'],
-                    line['color'],
-                    line['stops'].split(',')
+                line['linea_id_FGV'],
+                "Línea " + line['nombre_largo'].replace('L', ''),
+                line['nombre_corto'],
+                line['color'],
+                line['stops'].split(',')
             )
             lines.append(fetchedLine)
         except KeyError:
@@ -26,24 +26,25 @@ def fetchLines():
     return lines
 
 
-def fetchStops():
-    stops = []
+def fetchStops() -> list[c.StopObject]:
+    stops: list[c.StopObject] = []
     r = requests.get(API_URL + "/estaciones")
     response = r.json()
     for stop in response:
         try:
             fetchedStop = c.StopObject(
-                    stop['estacion_id_FGV'],
-                    None,
-                    stop['nombre'],
-                    [],
-                    [],
-                    stop['latitud'],
-                    stop['longitud'],
+                stop['estacion_id_FGV'],
+                None,
+                stop['nombre'],
+                [],
+                [],
+                stop['latitud'],
+                stop['longitud'],
             )
             stops.append(fetchedStop)
-        except KeyError:
-            print("KeyError found")
+        except KeyError as e:
+            print("KeyError found:")
+            print(e)
             pass
         pass
     return stops
@@ -63,6 +64,7 @@ def run():
     c.exportStops(PROVIDER, fetchedStops)
     c.updateProvider(PROVIDER)
     pass
+
 
 if __name__ == "__main__":
     try:

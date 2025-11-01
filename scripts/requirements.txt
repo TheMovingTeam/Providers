@@ -1,0 +1,7 @@
+requests
+types-requests
+json-types
+jsonpath-ng
+xmltodict
+types-xmltodict
+types-PySocks
