@@ -8,6 +8,6 @@
         "DoubleTime",
         "Geo"
     ],
-    "lastUpdated": 1761731256,
-    "timeSource": "TBD"
+    "lastUpdated": 1761731257,
+    "timeSource": "https://api.latbus.com/latbusapp/rest/realTimeMultiStop?stop%5B%5D=@stop"
 }
