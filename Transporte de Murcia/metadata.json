@@ -1,0 +1,13 @@
+{
+    "name": "Transporte de Murcia",
+    "description": "Implementaci\u00f3n no oficial del servicio de Transporte de Murcia.",
+    "id": 14,
+    "versionMajor": 1,
+    "versionMinor": 1,
+    "capabilities": [
+        "Time",
+        "Geo"
+    ],
+    "lastUpdated": 1762420412,
+    "timeSource": "http://95.63.53.45:8045/SIRI.IIS/SiriWS.asmx"
+}
