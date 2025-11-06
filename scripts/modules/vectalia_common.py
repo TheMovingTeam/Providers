@@ -10,7 +10,7 @@ POST_STRING = '<?xml version=\'1.0\' encoding=\'UTF-8\' standalone=\'yes\' ?><da
 stopIds = []
 
 
-def fetchLines(city):
+def fetchLines(city) -> list[c.LineObject]:
     lines = []
     r = requests.post(API_BASE_URL.replace("@city", city), POST_STRING)
     query = jsonpath_ng.parse("$.data.line[*]")
@@ -29,7 +29,7 @@ def fetchLines(city):
     return lines
 
 
-def fetchStops(city):
+def fetchStops(city) -> list[c.StopObject]:
     stops = []
     r = requests.post(API_BASE_URL.replace("@city", city), POST_STRING)
     query = jsonpath_ng.parse("$.data.line_stop[*]")

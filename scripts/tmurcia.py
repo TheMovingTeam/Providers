@@ -1,18 +1,19 @@
-import requests
-import xmltodict
 import jsonpath_ng
 import modules.common as c
+import requests
+import xmltodict
+from modules.common import LineObject, StopObject
 
 PROVIDER = "Transporte de Murcia"
 API_URL = "http://95.63.53.45:8045/SIRI.IIS/SiriWS.asmx"
 
-LINES_REQUEST = """<?xml version='1.0' encoding='utf-8'?><soap:Envelope xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema'><soap:Body><LinesDiscovery xmlns='http://tempuri.org/'><request><Request xmlns=''><RequestTimestamp xmlns='http://www.siri.org.uk/siri'>2025-11-05T12:44:21.1920000+01:00</RequestTimestamp><AccountId xmlns='http://www.siri.org.uk/siri'>wshuesca</AccountId><AccountKey xmlns='http://www.siri.org.uk/siri'>WS.huesca</AccountKey><LinesDetailLevel xmlns='http://www.siri.org.uk/siri'>normal</LinesDetailLevel></Request></request></LinesDiscovery></soap:Body></soap:Envelope>"""
+REQUEST = """<?xml version='1.0' encoding='utf-8'?><soap:Envelope xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema'><soap:Body><LinesDiscovery xmlns='http://tempuri.org/'><request><Request xmlns=''><RequestTimestamp xmlns='http://www.siri.org.uk/siri'>2025-11-05T12:44:21.1920000+01:00</RequestTimestamp><AccountId xmlns='http://www.siri.org.uk/siri'>wshuesca</AccountId><AccountKey xmlns='http://www.siri.org.uk/siri'>WS.huesca</AccountKey><LinesDetailLevel xmlns='http://www.siri.org.uk/siri'>normal</LinesDetailLevel></Request></request></LinesDiscovery></soap:Body></soap:Envelope>"""
 
 
-def fetchInfo() -> (list[c.LineObject], list[c.StopObject]):
+def fetchInfo() -> tuple[list[LineObject], list[StopObject]]:
     lines: list[c.LineObject] = []
     stops: list[c.StopObject] = []
-    r = requests.post(API_URL, LINES_REQUEST, headers={"Content-Type": "text/xml"})
+    r = requests.post(API_URL, REQUEST, headers={"Content-Type": "text/xml"})
     responseJson = xmltodict.parse(r.text.replace(":", ""))
     query = jsonpath_ng.parse(
         "$.soapEnvelope.soapBody.LinesDiscoveryResponse.LinesDiscoveryResult.Answer.AnnotatedLineRef[*]"
