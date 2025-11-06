@@ -71,7 +71,7 @@ def fetchInfo() -> (list[c.LineObject], list[c.StopObject]):
             stops.append(
                 c.StopObject(
                     int(stop["StopPointRef"]),
-                    None,
+                    int(stop["StopPointRef"]),
                     stop["StopName"],
                     [lineId],
                     [],
