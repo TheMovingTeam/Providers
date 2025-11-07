@@ -17,6 +17,10 @@ fi
 
 if [[ "$1" == "-r" ]]; then
     source ./.venv/bin/activate
-    python ./*.py
+    for i in *.py; do
+        [ -f "$i" ] || break
+        python $i &
+    done
+    wait
     exit 0
 fi

@@ -1,6 +1,6 @@
 {
     "name": "TMP Murcia",
-    "description": "Implementaci\u00f3n no oficial del servicio de Transporte de Murcia y Pedanías.",
+    "description": "Implementaci\u00f3n no oficial del servicio de Transporte de Murcia y Pedan\u00edas.",
     "id": 12,
     "versionMajor": 1,
     "versionMinor": 1,
@@ -8,6 +8,6 @@
         "Time",
         "Geo"
     ],
-    "lastUpdated": 1761731257,
+    "lastUpdated": 1762542410,
     "timeSource": "https://api.latbus.com/latbusapp/rest/realTimeMultiStop?stop%5B%5D=@stop"
 }
