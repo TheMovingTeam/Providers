@@ -5,12 +5,12 @@
     "versionMajor": 1,
     "versionMinor": 1,
     "capabilities": [
-        "DoubleTime",
+        "Time",
         "QrScan",
         "ComId",
         "Geo"
     ],
-    "lastUpdated": 1760043351,
+    "lastUpdated": 1762542403,
     "timeSource": "http://atualcoy.cuatroochenta.com/webservice.php/stop-timetable-isae?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Alcoi/consulta.aspx?p=@stop"
 }

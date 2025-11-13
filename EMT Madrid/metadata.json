@@ -5,8 +5,8 @@
     "versionMajor": 1,
     "versionMinor": 1,
     "capabilities": [
-        "DoubleTime"
+        "Time"
     ],
-    "lastUpdated": 1761241529,
+    "lastUpdated": 1762542501,
     "timeSource": "https://openapi.emtmadrid.es/v1/transport/busemtmad/stops/@stop/arrives/all/"
 }

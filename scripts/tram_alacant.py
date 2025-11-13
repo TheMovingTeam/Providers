@@ -1,5 +1,5 @@
 import requests
-import common as c
+import modules.common as c
 
 PROVIDER = "Tram Alacant"
 API_URL = "https://www.fgv.es/ap18/api/public/es/api/v1/A"
@@ -67,6 +67,7 @@ def run():
 
 if __name__ == "__main__":
     try:
+        print("-- Starting: TRAM Alacant")
         run()
     except KeyboardInterrupt:
         print("Interrupted!")

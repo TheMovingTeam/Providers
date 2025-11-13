@@ -1,6 +1,6 @@
 import requests
 import jsonpath_ng
-import common as c
+import modules.common as c
 
 
 PROVIDER = "EMT Madrid"
@@ -33,7 +33,7 @@ def fetchToken():
     return token
 
 
-def fetchLines(token):
+def fetchLines(token) -> list[c.LineObject]:
     lines = []
     r = requests.get(
         API_URL + "v2/transport/busemtmad/lines/info/",
@@ -72,7 +72,7 @@ def fetchLines(token):
     return lines
 
 
-def fetchStops(token):
+def fetchStops(token) -> list[c.StopObject]:
     fetchedStops = []
     r = requests.post(
         API_URL + "/v1/transport/busemtmad/stops/list/",
@@ -105,6 +105,7 @@ def run():
 
 if __name__ == "__main__":
     try:
+        print("-- Starting: EMT Madrid")
         run()
     except KeyboardInterrupt:
         print("Interrupted!")

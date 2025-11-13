@@ -1,7 +1,7 @@
 import requests
 import time
 from jsonpath_ng import parse
-import common as c
+import modules.common as c
 
 PROVIDER = "Vectalia Alicante"
 API_URL = "https://appalicante-api-rvpro.vectalia.es/es/api/public/"
@@ -108,6 +108,7 @@ def run():
 
 if __name__ == "__main__":
     try:
+        print("-- Starting: Vectalia Alicante")
         run()
     except KeyboardInterrupt:
         print("Interrupted!")

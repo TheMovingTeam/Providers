@@ -5,12 +5,12 @@
     "versionMajor": 1,
     "versionMinor": 1,
     "capabilities": [
-        "DoubleTime",
+        "Time",
         "QrScan",
         "ComId",
         "Geo"
     ],
-    "lastUpdated": 1760043354,
+    "lastUpdated": 1762542405,
     "timeSource": "http://atumerida.cuatroochenta.com/webservice.php/stop-timetable-siri?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Merida/consulta.aspx?p=@stop"
 }

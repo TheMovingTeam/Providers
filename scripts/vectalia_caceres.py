@@ -1,5 +1,5 @@
-import vectalia_common as vc
-import common as c
+import modules.vectalia_common as vc
+import modules.common as c
 
 PROVIDER = "Vectalia Cáceres"
 CITY = "caceres"
@@ -17,6 +17,7 @@ def run():
 
 if __name__ == "__main__":
     try:
+        print("-- Starting: Vectalia Cáceres")
         run()
     except KeyboardInterrupt:
         print("Interrupted!")

@@ -5,12 +5,12 @@
     "versionMajor": 1,
     "versionMinor": 1,
     "capabilities": [
-        "DoubleTime",
+        "Time",
         "QrScan",
         "ComId",
         "Geo"
     ],
-    "lastUpdated": 1761046895,
+    "lastUpdated": 1762544177,
     "timeSource": "https://appalicante-api-rvpro.vectalia.es/es/api/public/transportnet/15/linestop/@stop/estimation",
     "qrFormat": "http://www.subus.es/QR/Alicante/consulta.aspx?p=@stop"
 }

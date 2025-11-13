@@ -1,6 +1,6 @@
 import requests
 import json
-import common as c
+import modules.common as c
 
 PROVIDER = "Tranvía de Murcia"
 API_URL = "https://tranviademurcia.es/"
@@ -46,6 +46,7 @@ def run():
 
 if __name__ == "__main__":
     try:
+        print("-- Starting: Tranvía de Murcia")
         run()
     except KeyboardInterrupt:
         print("Interrupted!")
