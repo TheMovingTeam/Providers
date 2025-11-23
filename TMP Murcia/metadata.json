@@ -8,6 +8,6 @@
         "Time",
         "Geo"
     ],
-    "lastUpdated": 1762542410,
+    "lastUpdated": 1763919308,
     "timeSource": "https://api.latbus.com/latbusapp/rest/realTimeMultiStop?stop%5B%5D=@stop"
 }

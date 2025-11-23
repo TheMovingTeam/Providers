@@ -7,6 +7,6 @@
     "capabilities": [
         "Time"
     ],
-    "lastUpdated": 1762542708,
+    "lastUpdated": 1763919618,
     "timeSource": "https://api.softoursistemas.com/metrobus/old/stop/@comId/estimation"
 }

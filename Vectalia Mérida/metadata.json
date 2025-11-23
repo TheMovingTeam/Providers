@@ -10,7 +10,7 @@
         "ComId",
         "Geo"
     ],
-    "lastUpdated": 1762542405,
+    "lastUpdated": 1763919309,
     "timeSource": "http://atumerida.cuatroochenta.com/webservice.php/stop-timetable-siri?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Merida/consulta.aspx?p=@stop"
 }
