@@ -59,6 +59,12 @@ def fetchStops(ids):
         try:
             if response['code'] == 200:
                 data = response['data']
+                
+                # TODO: Generate images from StreetView link
+                if data["image"] is not None:
+                    fetchImage(data["image"], id)
+                    pass
+
                 itinerariesResponse = data['itineraries']
                 linesInStop = []
                 if itinerariesResponse == []:
@@ -76,7 +82,7 @@ def fetchStops(ids):
                                 )
                 except KeyError:
                     print("Incidences empty")
-                    incidence_msgs = []
+                    incidence_msgs: list[str] = []
                 stop = c.StopObject(
                     data['id'],
                     int(data['nameCommercial']),
@@ -95,6 +101,22 @@ def fetchStops(ids):
         time.sleep(1)
         pass
     return stops
+
+
+def fetchImage(url: str, stopId: int):
+    r = requests.get(url)
+
+    # Check for success
+    if 200 <= r.status_code < 300:
+        try:
+            image = r.content
+            c.saveImage(image, stopId, PROVIDER)
+        except Exception as e:
+            print(e)
+            pass
+        pass
+    pass
+    pass
 
 
 def run():
