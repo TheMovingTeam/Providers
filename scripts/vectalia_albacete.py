@@ -7,7 +7,7 @@ CITY = "albacete"
 
 def run():
     lines = vc.fetchLines(CITY)
-    stops = vc.fetchStops(CITY)
+    stops = vc.fetchStops(CITY, PROVIDER)
     vc.fetchAssociations(lines, stops, CITY)
     c.exportLines(PROVIDER, lines)
     c.exportStops(PROVIDER, stops)

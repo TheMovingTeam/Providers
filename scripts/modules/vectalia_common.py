@@ -29,7 +29,7 @@ def fetchLines(city) -> list[c.LineObject]:
     return lines
 
 
-def fetchStops(city) -> list[c.StopObject]:
+def fetchStops(city, provider) -> list[c.StopObject]:
     stops = []
     r = requests.post(API_BASE_URL.replace("@city", city), POST_STRING)
     query = jsonpath_ng.parse("$.data.line_stop[*]")
@@ -46,6 +46,7 @@ def fetchStops(city) -> list[c.StopObject]:
                 i["location_longitude"],
             )
         )
+        fetchImage(i["importation_id"], i["id"], city, provider)
         pass
     return stops
 
@@ -73,3 +74,22 @@ def fetchAssociations(lines, stops, city):
             pass
         except KeyError:
             continue
+
+
+def fetchImage(comId: int, stopId: int, city: str, provider: str):
+    url = API_BASE_URL.replace("@city", city).replace(
+        "webservice.php/sync.php?compression=false",
+        "mdf-uploads/line_stop/street_view_local_stop_" + str(comId) + ".png",
+    )
+    r = requests.get(url)
+
+    # Check for success
+    if 200 <= r.status_code < 300:
+        try:
+            image = r.content
+            c.saveImage(image, stopId, provider)
+        except Exception as e:
+            print(e)
+            pass
+        pass
+    pass

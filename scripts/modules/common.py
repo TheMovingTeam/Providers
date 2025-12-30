@@ -72,6 +72,8 @@ def exportStops(provider: str, stops: list[StopObject]):
     stopsJson = json.dumps(stopsDict)
     with open("../" + provider + "/stops.json", "w") as outfile:
         outfile.write(stopsJson)
+        pass
+    pass
 
 
 def updateProvider(provider: str):
@@ -82,3 +84,14 @@ def updateProvider(provider: str):
     os.remove(filename)
     with open(filename, "w") as file:
         json.dump(metadata, file, indent=4)
+        pass
+    pass
+
+
+def saveImage(img: bytes, stopId: int, provider: str):
+    filename = "../" + provider + "/res/stop/" + str(stopId) + ".png"
+    with open(filename, "wb") as file:
+        file.write(img)
+        file.close()
+        pass
+    pass
