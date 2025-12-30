@@ -61,17 +61,9 @@ def fetchAssociations(lines, stops, city):
         try:
             line_id = association["line_id"]
             line_stop_id = association["line_stop_id"]
-            for stop in stops:
-                if stop.id == line_stop_id:
-                    stop.lines.append(line_id)
-                    pass
-                pass
-            for line in lines:
-                if line.id == line_id:
-                    line.stops.append(line_stop_id)
-                    pass
-                pass
-            pass
+
+            [stop.lines.append(int(line_id)) for stop in stops if stop.id == line_stop_id]
+            [line.stops.append(int(line_stop_id)) for line in lines if line.id == line_id]
         except KeyError:
             continue
 

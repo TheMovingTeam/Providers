@@ -74,7 +74,7 @@ def run():
 
 if __name__ == "__main__":
     try:
-        print("-- Starting: Metrobus Valencia")
+        print("-- Starting: " + PROVIDER)
         run()
     except KeyboardInterrupt:
         print("Interrupted!")

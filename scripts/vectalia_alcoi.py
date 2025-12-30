@@ -17,7 +17,7 @@ def run():
 
 if __name__ == "__main__":
     try:
-        print("-- Starting: Vectalia Alcoi")
+        print("-- Starting: " + PROVIDER)
         run()
     except KeyboardInterrupt:
         print("Interrupted!")

@@ -24,11 +24,14 @@ def fetchLines():
         try:
             if response['code'] == 200:
                 data = response['data']
+                
                 lineStopsResponse = data['line_stops']
                 lineStops = []
+                
                 if lineStopsResponse == []:
                     print("No stops found, skipping")
                     continue  # Skip line if it has no stops
+
                 for lineStop in lineStopsResponse:
                     stopIds.append(lineStop['line_stop_id'])
                     lineStops.append(lineStop['line_stop_id'])
@@ -45,7 +48,7 @@ def fetchLines():
         except KeyError:
             print("KeyError found")
             pass
-        time.sleep(1)
+        # time.sleep(1)
         pass
     return lines
 
@@ -98,7 +101,7 @@ def fetchStops(ids):
         except KeyError:
             print("KeyError found")
             pass
-        time.sleep(1)
+        # time.sleep(1)
         pass
     return stops
 
