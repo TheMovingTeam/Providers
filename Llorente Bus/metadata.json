@@ -1,0 +1,16 @@
+{
+    "name": "Llorente Bus",
+    "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Llorente y Benidorm.",
+    "id": 15,
+    "versionMajor": 1,
+    "versionMinor": 1,
+    "capabilities": [
+        "Time",
+        "QrScan",
+        "ComId",
+        "Geo"
+    ],
+    "lastUpdated": 1767137456,
+    "timeSource": "https://sirigmv.avanzagrupo.com/Siriv2/SiriWS.asmx",
+    "qrFormat": "https://consultas.avanzagrupo.com/qr/benidorm-@stop"
+}
