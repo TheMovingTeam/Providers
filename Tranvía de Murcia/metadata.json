@@ -1,13 +1,12 @@
 {
     "name": "Tranv\u00eda de Murcia",
     "description": "Implementaci\u00f3n no oficial del servicio de tranv\u00eda de Murcia.",
-    "id": 11,
     "versionMajor": 1,
     "versionMinor": 1,
     "capabilities": [
         "Time",
         "Geo"
     ],
-    "lastUpdated": 1763919307,
+    "lastUpdated": 1767137455,
     "timeSource": "https://tranvia-murcia.es:3080/SIV/WebServiceSIV.asmx/GetEstimacionHoraria?idParada=@stop&via=0"
 }

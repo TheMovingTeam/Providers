@@ -1,12 +1,11 @@
 {
     "name": "EMT Madrid",
     "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Madrid.",
-    "id": 10,
     "versionMajor": 1,
     "versionMinor": 1,
     "capabilities": [
         "Time"
     ],
-    "lastUpdated": 1763919415,
+    "lastUpdated": 1767137551,
     "timeSource": "https://openapi.emtmadrid.es/v1/transport/busemtmad/stops/@stop/arrives/all/"
 }

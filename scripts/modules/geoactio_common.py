@@ -60,4 +60,7 @@ def fetchStops(city: str, geoX: str, geoY: str) -> list[c.StopObject]:
 def fetchAssociations(lines: list[c.LineObject], stops: list[c.StopObject]):
     for stop in stops:
         [line.stops.append(stop.id) for line in lines if line.id in stop.lines]
+        pass
+    # Remove empty lines
+    [lines.remove(line) for line in lines if not line.stops]
     pass

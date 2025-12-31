@@ -1,13 +1,12 @@
 {
     "name": "Metrovalencia",
     "description": "Implementaci\u00f3n no oficial del servicio de Metrovalencia.",
-    "id": 4,
     "versionMajor": 1,
     "versionMinor": 1,
     "capabilities": [
         "Time",
         "Geo"
     ],
-    "lastUpdated": 1763919307,
+    "lastUpdated": 1767137455,
     "timeSource": "https://www.fgv.es/ap18/api/public/es/api/v1/V/horarios-prevision-3/@stop"
 }

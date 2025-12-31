@@ -19,7 +19,7 @@ if [[ "$1" == "-r" ]]; then
     source ./.venv/bin/activate
     for i in *.py; do
         [ -f "$i" ] || break
-        python $i &
+        ghostty -e python $i &
     done
     wait
     exit 0
