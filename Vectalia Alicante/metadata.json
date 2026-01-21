@@ -2,14 +2,14 @@
     "name": "Vectalia Alicante",
     "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Alicante.",
     "versionMajor": 1,
-    "versionMinor": 1,
+    "versionMinor": 2,
     "capabilities": [
         "Time",
         "QrScan",
         "ComId",
         "Geo"
     ],
-    "lastUpdated": 1767137759,
+    "lastUpdated": 1769023629,
     "timeSource": "https://appalicante-api-rvpro.vectalia.es/es/api/public/transportnet/15/linestop/@stop/estimation",
     "qrFormat": "http://www.subus.es/QR/Alicante/consulta.aspx?p=@stop"
 }

@@ -2,14 +2,14 @@
     "name": "Vectalia Alcoi",
     "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Alcoi.",
     "versionMajor": 1,
-    "versionMinor": 1,
+    "versionMinor": 2,
     "capabilities": [
         "Time",
         "QrScan",
         "ComId",
         "Geo"
     ],
-    "lastUpdated": 1767137476,
+    "lastUpdated": 1769016431,
     "timeSource": "http://atualcoy.cuatroochenta.com/webservice.php/stop-timetable-isae?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Alcoi/consulta.aspx?p=@stop"
 }

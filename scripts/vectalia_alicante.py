@@ -1,7 +1,7 @@
 import requests
-import time
 from jsonpath_ng import parse
 import modules.common as c
+import modules.vectalia_common as vc
 
 PROVIDER = "Vectalia Alicante"
 API_URL = "https://appalicante-api-rvpro.vectalia.es/es/api/public/"
@@ -9,6 +9,7 @@ API_URL = "https://appalicante-api-rvpro.vectalia.es/es/api/public/"
 ITINERARY_QUERY = '$.data.transport_nets[*].lines[*].itineraries[*].id'
 stopIds = []
 
+KML_QUERY = '$.kml.Document.Folder.Placemark.LineString.coordinates'
 
 def fetchLines():
     lines = []
@@ -18,7 +19,7 @@ def fetchLines():
     itineraries = [match.value for match in query.find(rq.json())]
     # Download itineraries
     for i in itineraries:
-        print("Testing " + str(i))
+        print("Fetching line " + str(i))
         r = requests.get(API_URL + "itinerary/" + str(i))
         response = r.json()
         try:
@@ -43,6 +44,15 @@ def fetchLines():
                     lineStops
                 )
                 lines.append(line)
+                
+                vc.fetchPath(line, data['kml'], KML_QUERY)
+
+                # Exclude broken routes
+                # Literally how does this happen
+                if (line.emblem == "TURI") or (line.emblem == "C-53"):
+                    line.path = None
+                    pass
+                
                 print("Pass")
                 pass
         except KeyError:

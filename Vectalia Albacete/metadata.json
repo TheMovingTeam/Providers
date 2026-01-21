@@ -2,14 +2,14 @@
     "name": "Vectalia Albacete",
     "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Albacete.",
     "versionMajor": 1,
-    "versionMinor": 1,
+    "versionMinor": 2,
     "capabilities": [
         "Time",
         "QrScan",
         "ComId",
         "Geo"
     ],
-    "lastUpdated": 1767137500,
+    "lastUpdated": 1769016508,
     "timeSource": "http://atualbacete.cuatroochenta.com/webservice.php/stop-timetable-isae?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Albacete/consulta.aspx?p=@stop"
 }
