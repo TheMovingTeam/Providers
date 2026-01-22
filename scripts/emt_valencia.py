@@ -10,7 +10,7 @@ PROVIDER = "EMT Valencia"
 API_URL = "https://www.emtvalencia.es/ciudadano/servicios/"
 
 
-def fetchLines():
+def fetchLines() -> list[c.LineObject]:
     fetchedLines = []
     r = requests.get(API_URL + "info_lineas_v2.xml")
     data = xmltodict.parse(r.content.decode('utf-8'))
@@ -30,8 +30,13 @@ def fetchLines():
     return fetchedLines
 
 
-def fetchStops(lines):
+def fetchStops(lines) -> list[c.StopObject]:
     fetchedStops = []
+    
+    url = "https://www.emtvalencia.es/EMT/mapfunctions/MapUtilsPetitions.php?sec=findParadas&sCoordenadas=4326"
+    r = requests.get(url)
+    geoJson = xmltodict.parse(r.content.decode('utf-8'))
+    
     for line in lines:
         print("Fetching stops for line " + line.id)
         match line.id:
@@ -48,21 +53,28 @@ def fetchStops(lines):
                 line.id = 90
                 pass
             case _:
-                id = line.id
+                id = int(line.id)
                 pass
         routesURL = API_URL + "sentidos_ruta_linea.php" + \
             "?usuario=7gH8m45w7A" + \
             "&linea=" + str(id) + \
             "&lang=es"
         r = requests.get(routesURL)
+        
         try:
             data = xmltodict.parse(r.content.decode('utf-8'))
         except e.ExpatError:
-            logging.warning("Error found fetching routes for line: " + line.id)
-            print("Input:")
-            print(r.content.decode('utf-8'))
-            print("URL: " + routesURL)
-            continue
+            # Wait and try again to ensure rate limit isn't hit
+            time.sleep(5)
+            r = requests.get(routesURL)
+            try:
+                data = xmltodict.parse(r.content.decode('utf-8'))
+            except e.ExpatError:
+                logging.warning("Error found fetching routes for line: " + line.id)
+                print("Input:")
+                print(r.content.decode('utf-8'))
+                print("URL: " + routesURL)
+        
         query = jsonpath_ng.parse("$.linea.sentidos_ruta.sentido_ruta[*]")
         routes = [match.value for match in query.find(data)]
         for route in routes:
@@ -80,32 +92,59 @@ def fetchStops(lines):
                 print("Input:")
                 print(r.content.decode('utf-8'))
                 continue
+            
             query = jsonpath_ng.parse("$.linea.paradas.parada[*]")
             stops = [match.value for match in query.find(data)]
-            stopIdQuery = jsonpath_ng.parse(
-                "$.linea.paradas.parada[*].id_parada")
+
+            stopIdQuery = jsonpath_ng.parse("$.linea.paradas.parada[*].id_parada")
+            
             stopIds = [int(match.value) for match in stopIdQuery.find(data)]
             line.stops = stopIds
+
             for stop in stops:
-                lineQuery = jsonpath_ng.parse(
-                    "$.lineas_parada.linea_parada[*]")
+                print("\tFetching stop " + stop['id_parada'])
+                lineQuery = jsonpath_ng.parse("$.lineas_parada.linea_parada[*]")
+                
                 stopLineEmblems = [
-                    match.value for match in lineQuery.find(stop)]
+                    match.value
+                    for match in lineQuery.find(stop)
+                    ]
+                
                 stopLines = [
-                    line.id for line in lines if line.emblem in stopLineEmblems]
+                        line.id
+                        for line in lines
+                        if line.emblem in stopLineEmblems
+                        ]
+                
                 fetchedStop = c.StopObject(
-                    stop['id_parada'],
+                    int(stop['id_parada']),
                     None,
                     stop['nombre_parada'],
                     stopLines,
-                    [],  # Notifications
-                    None,  # GeoX
-                    None,  # GeoY
+                    [],
+                    None,
+                    None,
                 )
-                fetchedStops.append(fetchedStop)
-                time.sleep(.5)
+                
+                if fetchedStop not in fetchedStops:
+                    fetchStopPoints(fetchedStop, geoJson)
+                    fetchedStops.append(fetchedStop)
                 pass
+            # Rate limit
+            time.sleep(2.5)
+            pass
+        time.sleep(2.5)
     return list(set(fetchedStops))
+
+
+def fetchStopPoints(stop: c.StopObject, data: dict):
+    for point in data["findBusStopes"]["list"]["paradaInfo"]:
+        id = int(point["id"])
+        if stop.id == id:
+            coords: dict = point["mappoint"]
+            # Coordinates are inverted
+            stop.geoX = float(coords["@y"])
+            stop.geoY = float(coords["@x"])
 
 
 def run():
