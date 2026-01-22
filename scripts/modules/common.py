@@ -120,6 +120,10 @@ def parseKML(kml: str, kmlQuery: str) -> list[list[float]]:
     return coords
 
 
-def makeGeoJson(coords:list[list[float]]) -> str:
-    geoJsonBase = '{"type":"Feature","geometry":{"type":"LineString","coordinates":@coords}}'
+def makeGeoJson(coords:list[list[float]] | list[list[list[float]]], isMLS: bool = False) -> str:
+    if isMLS is True:
+        feat = "MultiLineString"
+    else:
+        feat = "LineString"
+    geoJsonBase = '{"type":"Feature","geometry":{"type":"' + feat +'","coordinates":@coords}}'
     return geoJsonBase.replace("@coords", str(coords))

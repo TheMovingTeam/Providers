@@ -8,7 +8,7 @@
         "QrScan",
         "Geo"
     ],
-    "lastUpdated": 1769110267,
+    "lastUpdated": 1769119252,
     "timeSource": "https://servicios.emtvalencia.es/estimaciones/estimacion.php?idioma=es&parada=@stop&adaptados=false",
     "qrFormat": "http://www.emtvalencia.es/QR.php?sec=est&p=@stop"
 }
