@@ -10,7 +10,7 @@ stopQuery = jsonpath_ng.parse("$.lineas[*].id")
 
 def fetchLines(city: str) -> list[c.LineObject]:
     lines: list[c.LineObject] = []
-    r: requests.Request = requests.get(
+    r = requests.get(
         API_BASE_URL.replace("@city", city) + "lineas",
     )
     response: list[dict] = json.loads(r.content.decode("utf-8"))["message"]

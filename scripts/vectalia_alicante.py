@@ -47,10 +47,10 @@ def fetchLines():
                 
                 vc.fetchPath(line, data['kml'], KML_QUERY)
 
-                # Exclude broken routes
-                # Literally how does this happen
+                # Exclude broken routes, but don't null them so they don't try generating
+                # Literally how does this even happen
                 if (line.emblem == "TURI") or (line.emblem == "C-53"):
-                    line.path = None
+                    line.path = ""
                     pass
                 
                 print("Pass")
@@ -58,7 +58,6 @@ def fetchLines():
         except KeyError:
             print("KeyError found")
             pass
-        # time.sleep(1)
         pass
     return lines
 
