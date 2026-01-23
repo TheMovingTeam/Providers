@@ -3,9 +3,8 @@
     "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Metrobus Valencia.",
     "capabilities": [
         "Time",
-        "Geo",
-        "GenPath"
+        "Geo"
     ],
-    "lastUpdated": 1763919618,
+    "lastUpdated": 1769182318,
     "timeSource": "https://api.softoursistemas.com/metrobus/old/stop/@comId/estimation"
 }
