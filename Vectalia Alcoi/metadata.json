@@ -1,8 +1,6 @@
 {
     "name": "Vectalia Alcoi",
     "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Alcoi.",
-    "versionMajor": 1,
-    "versionMinor": 2,
     "capabilities": [
         "Time",
         "QrScan",

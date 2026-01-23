@@ -1,8 +1,6 @@
 {
     "name": "TMP Murcia",
     "description": "Implementaci\u00f3n no oficial del servicio de Transporte de Murcia y Pedan\u00edas.",
-    "versionMajor": 1,
-    "versionMinor": 1,
     "capabilities": [
         "Time",
         "Geo"

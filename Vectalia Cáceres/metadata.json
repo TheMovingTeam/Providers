@@ -1,8 +1,6 @@
 {
     "name": "Vectalia C\u00e1ceres",
     "description": "Implementaci\u00f3n no oficial del servicio de autobuses de C\u00e1ceres.",
-    "versionMajor": 1,
-    "versionMinor": 2,
     "capabilities": [
         "Time",
         "QrScan",

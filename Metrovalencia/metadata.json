@@ -1,8 +1,6 @@
 {
     "name": "Metrovalencia",
     "description": "Implementaci\u00f3n no oficial del servicio de Metrovalencia.",
-    "versionMajor": 1,
-    "versionMinor": 1,
     "capabilities": [
         "Time",
         "Geo"

@@ -1,8 +1,6 @@
 {
     "name": "Llorente Bus",
     "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Llorente y Benidorm.",
-    "versionMajor": 1,
-    "versionMinor": 1,
     "capabilities": [
         "Time",
         "QrScan",

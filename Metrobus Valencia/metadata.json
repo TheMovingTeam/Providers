@@ -1,10 +1,10 @@
 {
     "name": "Metrobus Valencia",
     "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Metrobus Valencia.",
-    "versionMajor": 1,
-    "versionMinor": 1,
     "capabilities": [
-        "Time"
+        "Time",
+        "Geo",
+        "GenPath"
     ],
     "lastUpdated": 1763919618,
     "timeSource": "https://api.softoursistemas.com/metrobus/old/stop/@comId/estimation"

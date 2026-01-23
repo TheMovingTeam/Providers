@@ -1,8 +1,6 @@
 {
     "name": "EMT Madrid",
     "description": "Implementaci\u00f3n no oficial del servicio de autobuses de Madrid.",
-    "versionMajor": 1,
-    "versionMinor": 1,
     "capabilities": [
         "Time"
     ],

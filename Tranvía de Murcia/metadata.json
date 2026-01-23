@@ -1,8 +1,6 @@
 {
     "name": "Tranv\u00eda de Murcia",
     "description": "Implementaci\u00f3n no oficial del servicio de tranv\u00eda de Murcia.",
-    "versionMajor": 1,
-    "versionMinor": 1,
     "capabilities": [
         "Time",
         "Geo"
