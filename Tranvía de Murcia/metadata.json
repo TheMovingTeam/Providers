@@ -3,8 +3,9 @@
     "description": "Implementaci\u00f3n no oficial del servicio de tranv\u00eda de Murcia.",
     "capabilities": [
         "Time",
-        "Geo"
+        "Geo",
+        "GenPath"
     ],
-    "lastUpdated": 1767137455,
+    "lastUpdated": 1767137456,
     "timeSource": "https://tranvia-murcia.es:3080/SIV/WebServiceSIV.asmx/GetEstimacionHoraria?idParada=@stop&via=0"
 }
