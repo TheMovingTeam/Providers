@@ -3,8 +3,9 @@
     "description": "Implementaci\u00f3n no oficial del servicio de Metrovalencia.",
     "capabilities": [
         "Time",
-        "Geo"
+        "Geo",
+        "GenPath"
     ],
-    "lastUpdated": 1767137455,
+    "lastUpdated": 1767137456,
     "timeSource": "https://www.fgv.es/ap18/api/public/es/api/v1/V/horarios-prevision-3/@stop"
 }

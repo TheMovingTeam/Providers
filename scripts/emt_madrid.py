@@ -65,7 +65,7 @@ def fetchLines(token) -> list[c.LineObject]:
             lineName[0],
             line['label'],
             "#" + line['color'],
-            list(set(lineStops1 + lineStops2))  # Stops
+            list(set(lineStops1 + lineStops2))
         )
         lines.append(fetchedLine)
         pass
