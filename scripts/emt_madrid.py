@@ -105,10 +105,13 @@ def fetchPath(line: c.LineObject, token: str):
                 + "/route",
                 headers= {"accessToken": token}
             )
-    query = jsonpath_ng.parse("$.data.itinerary.[*].features[*].geometry.coordinates[*]")
+    query1 = jsonpath_ng.parse("$.data.itinerary.toA.features[*].geometry.coordinates[*]")
+    query2 = jsonpath_ng.parse("$.data.itinerary.toB.features[*].geometry.coordinates[*]")
 
-    coords = query.find(r.json())
-    path = c.makeGeoJson(coords, True)
+    segments1: list[list[list[float]]] = [match.value for match in query1.find(r.json())]
+    segments2: list[list[list[float]]] = [match.value for match in query2.find(r.json())]
+
+    path = c.makeGeoJson(segments1 + segments2, True)
 
     line.path = path
     pass
