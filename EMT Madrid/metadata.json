@@ -5,6 +5,6 @@
         "Time",
         "Geo"
     ],
-    "lastUpdated": 1767137551,
+    "lastUpdated": 1769371123,
     "timeSource": "https://openapi.emtmadrid.es/v1/transport/busemtmad/stops/@stop/arrives/all/"
 }

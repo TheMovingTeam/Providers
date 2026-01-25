@@ -33,7 +33,7 @@ def fetchToken():
     return token
 
 
-def fetchLines(token) -> list[c.LineObject]:
+def fetchLines(token: str) -> list[c.LineObject]:
     lines = []
     r = requests.get(
         API_URL + "v2/transport/busemtmad/lines/info/",
@@ -67,31 +67,51 @@ def fetchLines(token) -> list[c.LineObject]:
             "#" + line['color'],
             list(set(lineStops1 + lineStops2))
         )
+        fetchPath(fetchedLine, token)
         lines.append(fetchedLine)
         pass
     return lines
 
 
-def fetchStops(token) -> list[c.StopObject]:
+def fetchStops(token: str) -> list[c.StopObject]:
     fetchedStops = []
+    
     r = requests.post(
         API_URL + "/v1/transport/busemtmad/stops/list/",
         headers={"accessToken": token}
     )
     query = jsonpath_ng.parse("$.data[*]")
+
     stops = [match.value for match in query.find(r.json())]
     for stop in stops:
         fetchedStop = c.StopObject(
-            stop['node'],
-            None,  # ComId
+            int(stop['node']),
+            None,
             stop['name'],
-            [line.split('/')[0] for line in stop['lines']],  # Lines
-            [],  # Notifications
-            stop['geometry']['coordinates'][0],
+            [int(line.split('/')[0]) for line in stop['lines']],
+            [],
             stop['geometry']['coordinates'][1],
+            stop['geometry']['coordinates'][0],
         )
         fetchedStops.append(fetchedStop)
     return fetchedStops
+
+
+def fetchPath(line: c.LineObject, token: str):
+    r = requests.get(
+            API_URL
+                + "v1/transport/busemtmad/lines/"
+                + str(line.id)
+                + "/route",
+                headers= {"accessToken": token}
+            )
+    query = jsonpath_ng.parse("$.data.itinerary.[*].features[*].geometry.coordinates[*]")
+
+    coords = query.find(r.json())
+    path = c.makeGeoJson(coords, True)
+
+    line.path = path
+    pass
 
 
 def run():
