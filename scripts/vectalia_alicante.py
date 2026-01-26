@@ -50,7 +50,7 @@ def fetchLines():
                 # Exclude broken routes, but don't null them so they don't try generating
                 # Literally how does this even happen
                 if (line.emblem == "TURI") or (line.emblem == "C-53"):
-                    line.path = ""
+                    line.path = None
                     pass
                 
                 print("Pass")
