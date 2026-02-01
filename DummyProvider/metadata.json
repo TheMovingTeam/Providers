@@ -1,13 +1,9 @@
 {
     "name": "DummyProvider",
     "description": "This is a placeholder provider for testing, you should not be able to see this.",
-    "id": 1,
-    "versionMajor": 1,
-    "versionMinor": 0,
     "capabilities": [
         "Time",
-        "QrScan",
-        "Notifications"
+        "QrScan"
     ],
     "lastUpdated": 1757184329,
     "timeSource": "http://192.168.0.17:3000/@stop",

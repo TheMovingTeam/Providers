@@ -33,7 +33,7 @@ def fetchToken():
     return token
 
 
-def fetchLines(token) -> list[c.LineObject]:
+def fetchLines(token: str) -> list[c.LineObject]:
     lines = []
     r = requests.get(
         API_URL + "v2/transport/busemtmad/lines/info/",
@@ -65,33 +65,56 @@ def fetchLines(token) -> list[c.LineObject]:
             lineName[0],
             line['label'],
             "#" + line['color'],
-            list(set(lineStops1 + lineStops2))  # Stops
+            list(set(lineStops1 + lineStops2))
         )
+        fetchPath(fetchedLine, token)
         lines.append(fetchedLine)
         pass
     return lines
 
 
-def fetchStops(token) -> list[c.StopObject]:
+def fetchStops(token: str) -> list[c.StopObject]:
     fetchedStops = []
+    
     r = requests.post(
         API_URL + "/v1/transport/busemtmad/stops/list/",
         headers={"accessToken": token}
     )
     query = jsonpath_ng.parse("$.data[*]")
+
     stops = [match.value for match in query.find(r.json())]
     for stop in stops:
         fetchedStop = c.StopObject(
-            stop['node'],
-            None,  # ComId
+            int(stop['node']),
+            None,
             stop['name'],
-            [line.split('/')[0] for line in stop['lines']],  # Lines
-            [],  # Notifications
-            stop['geometry']['coordinates'][0],
+            [int(line.split('/')[0]) for line in stop['lines']],
+            [],
             stop['geometry']['coordinates'][1],
+            stop['geometry']['coordinates'][0],
         )
         fetchedStops.append(fetchedStop)
     return fetchedStops
+
+
+def fetchPath(line: c.LineObject, token: str):
+    r = requests.get(
+            API_URL
+                + "v1/transport/busemtmad/lines/"
+                + str(line.id)
+                + "/route",
+                headers= {"accessToken": token}
+            )
+    query1 = jsonpath_ng.parse("$.data.itinerary.toA.features[*].geometry.coordinates[*]")
+    query2 = jsonpath_ng.parse("$.data.itinerary.toB.features[*].geometry.coordinates[*]")
+
+    segments1: list[list[list[float]]] = [match.value for match in query1.find(r.json())]
+    segments2: list[list[list[float]]] = [match.value for match in query2.find(r.json())]
+
+    path = c.makeGeoJson(segments1 + segments2, True)
+
+    line.path = path
+    pass
 
 
 def run():
