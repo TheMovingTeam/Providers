@@ -7,7 +7,7 @@
         "ComId",
         "Geo"
     ],
-    "lastUpdated": 1769034612,
+    "lastUpdated": 1770201091,
     "timeSource": "https://appalicante-api-rvpro.vectalia.es/es/api/public/transportnet/15/linestop/@stop/estimation",
     "qrFormat": "http://www.subus.es/QR/Alicante/consulta.aspx?p=@stop"
 }

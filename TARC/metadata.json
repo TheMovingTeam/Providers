@@ -1,0 +1,11 @@
+{
+    "name": "Louisville TARC",
+    "description": "Unofficial implementation of the Louisville bus network.",
+    "capabilities": [
+        "Time",
+        "ComId",
+        "Geo"
+    ],
+    "lastUpdated": 1770054465,
+    "timeSource": "https://tarc.rideralerts.com/InfoPoint/rest/StopDepartures/Get/@stop"
+}
