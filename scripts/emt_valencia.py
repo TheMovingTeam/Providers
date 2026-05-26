@@ -25,25 +25,17 @@ def fetchLines() -> list[c.LineObject]:
                 "#FF0000",
                 [],  # Stops
             )
+
             match fetchedLine.id:
                 case "C1":
-                    id = 5
                     fetchedLine.id = 5
-                    pass
                 case "C2":
-                    id = 80
                     fetchedLine.id = 80
-                    pass
                 case "C3":
-                    id = 90
                     fetchedLine.id = 90
-                    pass
-                case _:
-                    id = int(fetchedLine.id)
-                    pass
-        fetchLinePath(fetchedLine)
-        fetchedLines.append(fetchedLine)
-        pass
+
+            fetchLinePath(fetchedLine)
+            fetchedLines.append(fetchedLine)
     return fetchedLines
 
 
@@ -132,10 +124,8 @@ def fetchStops(lines) -> list[c.StopObject]:
                 if fetchedStop not in fetchedStops:
                     fetchStopPoints(fetchedStop, geoJson)
                     fetchedStops.append(fetchedStop)
-                pass
             # Rate limit
             time.sleep(2.5)
-            pass
         time.sleep(2.5)
     return list(set(fetchedStops))
 
@@ -155,7 +145,6 @@ def fetchLinePath(line: c.LineObject):
     line.path = geoJson
 
     time.sleep(3)
-    pass
 
 
 def fetchStopPoints(stop: c.StopObject, data: dict):
@@ -174,7 +163,6 @@ def run():
     c.exportLines(PROVIDER, lines)
     c.exportStops(PROVIDER, stops)
     c.updateProvider(PROVIDER)
-    pass
 
 
 if __name__ == "__main__":

@@ -12,17 +12,15 @@ def fetchLines() -> list[c.LineObject]:
     for line in response:
         try:
             fetchedLine = c.LineObject(
-                line['linea_id_FGV'],
-                "Línea " + line['nombre_largo'].replace('L', ''),
-                line['nombre_corto'],
-                line['color'],
-                line['stops'].split(',')
+                line["linea_id_FGV"],
+                "Línea " + line["nombre_largo"].replace("L", ""),
+                line["nombre_corto"],
+                line["color"],
+                line["stops"].split(","),
             )
             lines.append(fetchedLine)
         except KeyError:
             print("KeyError found")
-            pass
-        pass
     return lines
 
 
@@ -33,20 +31,18 @@ def fetchStops() -> list[c.StopObject]:
     for stop in response:
         try:
             fetchedStop = c.StopObject(
-                stop['estacion_id_FGV'],
+                stop["estacion_id_FGV"],
                 None,
-                stop['nombre'],
+                stop["nombre"],
                 [],
                 [],
-                stop['latitud'],
-                stop['longitud'],
+                stop["latitud"],
+                stop["longitud"],
             )
             stops.append(fetchedStop)
         except KeyError as e:
             print("KeyError found:")
             print(e)
-            pass
-        pass
     return stops
 
 
@@ -63,7 +59,6 @@ def run():
     c.exportLines(PROVIDER, fetchedLines)
     c.exportStops(PROVIDER, fetchedStops)
     c.updateProvider(PROVIDER)
-    pass
 
 
 if __name__ == "__main__":

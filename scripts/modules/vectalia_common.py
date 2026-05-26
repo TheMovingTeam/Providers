@@ -108,7 +108,6 @@ def fetchImage(comId: int, stopId: int, city: str, provider: str):
 def fetchPath(line: c.LineObject, url: str, kmlQuery: str = KML_QUERY):
     r = requests.get(url)
 
-    # Try both itineraries, wtf Vectalia
     if 200 <= r.status_code < 300:
         try:
             path = c.makeGeoJson(c.parseKML(r.text, kmlQuery))

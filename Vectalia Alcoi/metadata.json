@@ -7,7 +7,7 @@
         "ComId",
         "Geo"
     ],
-    "lastUpdated": 1769016431,
+    "lastUpdated": 1779809484,
     "timeSource": "http://atualcoy.cuatroochenta.com/webservice.php/stop-timetable-isae?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Alcoi/consulta.aspx?p=@stop"
 }

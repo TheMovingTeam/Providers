@@ -69,7 +69,6 @@ def fetchLines(token: str) -> list[c.LineObject]:
         )
         fetchPath(fetchedLine, token)
         lines.append(fetchedLine)
-        pass
     return lines
 
 
@@ -114,7 +113,6 @@ def fetchPath(line: c.LineObject, token: str):
     path = c.makeGeoJson(segments1 + segments2, True)
 
     line.path = path
-    pass
 
 
 def run():

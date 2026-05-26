@@ -12,7 +12,6 @@ def run():
     c.exportLines(PROVIDER, lines)
     c.exportStops(PROVIDER, stops)
     c.updateProvider(PROVIDER)
-    pass
 
 
 if __name__ == "__main__":

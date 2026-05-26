@@ -7,7 +7,7 @@
         "ComId",
         "Geo"
     ],
-    "lastUpdated": 1769016567,
+    "lastUpdated": 1779809510,
     "timeSource": "http://atucaceres.cuatroochenta.com/webservice.php/stop-timetable-siri?stopId=@comId",
     "qrFormat": "http://www.subus.es/QR/Caceres/consulta.aspx?p=@stop"
 }

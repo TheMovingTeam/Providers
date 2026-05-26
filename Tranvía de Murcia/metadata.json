@@ -6,6 +6,6 @@
         "Geo",
         "GenPath"
     ],
-    "lastUpdated": 1767137456,
+    "lastUpdated": 1779809460,
     "timeSource": "https://tranvia-murcia.es:3080/SIV/WebServiceSIV.asmx/GetEstimacionHoraria?idParada=@stop&via=0"
 }

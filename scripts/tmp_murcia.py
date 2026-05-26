@@ -31,13 +31,11 @@ def fetchInfo():
                 line['name'],
                 str(line['route']),
                 "#FF0000",
-                []  # Stops
+                []
             )
             fetchedLines.append(fetchedLine)
-            pass
         else:
             fetchedLine = existingLine
-            pass
 
         for stop in line['stops']:
 
@@ -52,20 +50,17 @@ def fetchInfo():
             if existingStop is None:
                 fetchedStop = c.StopObject(
                     stop['id'],
-                    None,  # ComId
+                    None,
                     stop['name'],
-                    [lineId],  # Lines
-                    [],  # Notifications,
+                    [lineId],
+                    [],
                     stop['latitude'],
                     stop['longitude']
                 )
                 fetchedStops.append(fetchedStop)
             else:
                 existingStop.lines.append(lineId)
-                pass
 
-            pass
-        pass
     return fetchedLines, fetchedStops
 
 
@@ -74,7 +69,6 @@ def run():
     c.exportLines(PROVIDER, lines)
     c.exportStops(PROVIDER, stops)
     c.updateProvider(PROVIDER)
-    pass
 
 
 if __name__ == "__main__":
